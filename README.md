@@ -1,5 +1,6 @@
 # PFC-LDS-approx
-Code to fit context-dependent LDS models to approximate PFC responses during contextual decision-making (Soldado-Magraner et al. 2024)
+Code to fit context-dependent LDS models to approximate PFC responses during contextual decision-making, as appears in:
+_Inferring context-dependent computations through linear approximations of prefrontal cortex dynamics_, Soldado-Magraner et al. 2024
 
 
 
