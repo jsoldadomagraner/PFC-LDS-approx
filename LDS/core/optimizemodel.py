@@ -182,8 +182,9 @@ def fitmodel(params,target,specs):
     # Build gradient of loss function using autograd.
     training_loss_grad = grad(training_loss)
     
-    # Load mask to zero-out gradients for params that we don't want to change
-    # Note that we changed the core autograd gradmask function to do this
+    # Load mask to zero-out gradients for params that we don't want to change.
+    # Note that we modified the core autograd function adam within the script
+    # optimizers.py to implement this, by adding the flag flatten_mask.
     if specs['train subset']:
         from core.initmodel import gradmask
         from autograd.misc import flatten

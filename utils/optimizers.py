@@ -62,6 +62,7 @@ def adam(grad, x, callback=None, num_iters=100,
     v = np.zeros(len(x))
     for i in range(num_iters):
         g = grad(x, i)
+        # ADDITIONAL LINE below, using the NEW FLAG grad_mask to zero-out the gradients of the parameters we don't want to optimize
         if type(grad_mask) != bool: g[~grad_mask] = 0
         if callback: callback(x, i, g)
         m = (1 - b1) * g      + b1 * m  # First  moment estimate.

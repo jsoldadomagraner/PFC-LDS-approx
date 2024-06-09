@@ -101,8 +101,8 @@ initLDSmodel = 'ABcx_3Dinp'
 # optimum, so set this to True. MUST specify WHICH parameters manually BELOW!
 # This SHOULD match the parameters set to 1 in the mask in core/initmodel.py
 set_to_random = True
-# Note that to implement this functionality we had to change the core autograd 
-# gradmask function, to mask the gradients
+# Note that to implement this functionality we had to modify the core autograd 
+# adam function within optimizers.py, to mask the gradients.
 
 ## paths
 modelpath, datapath = mypaths()
