@@ -1,0 +1,35 @@
+#!/bin/bash
+# cvSLURMarray.sbatch
+#
+#SBATCH -o /myhomepath/outputs/TFR/%A_%a.out
+#SBATCH -e /myhomepath/outputs/TFR/%A_%a.err
+#SBATCH -t 1-00:00:00
+#SBATCH --mem=400MB
+#SBATCH --cpus-per-task=1
+#SBATCH -p cpu
+
+jobid=$SLURM_ARRAY_JOB_ID
+taskid=$SLURM_ARRAY_TASK_ID
+
+declare -a HH
+declare -a KK
+
+idx=-1
+for hh in $(seq $h1 $h2); do
+        for kk in $(seq $k1 $k2); do
+                let idx++
+                HH[$idx]=$hh
+		KK[$idx]=$kk 
+        done
+done
+
+h=${HH[$taskid]}
+k=${KK[$taskid]}
+
+python -u cvtfr.py $h $k
+
+cd ~/outputs/TFR/ 
+mv ${jobid}_${taskid}.out ${filename}H${h}cv${k}.out 
+mv ${jobid}_${taskid}.err ${filename}H${h}cv${k}.err 
+
+

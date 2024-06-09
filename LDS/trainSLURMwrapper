@@ -1,0 +1,27 @@
+#!/bin/bash
+# run this file using bash trainSLURMwrapper
+
+filename=arABcx3D
+
+# select k1=0,k2=0 to run only one instance and to remove filename tag run_k
+# for multiple runs r, start at k1=1 and choose for instance k2=100
+h1=18 ; h2=18
+k1=1 ; k2=100
+
+echo "fitting model ${filename}..."
+
+idx=-1
+for h in $(seq $h1 $h2); do 
+	for k in $(seq $k1 $k2); do
+		let idx++	
+		echo "xdim=${h}, run=${k}" 
+	done
+done
+
+asz=$(($idx+1))
+
+echo "job array size = ${asz}"
+
+export filename h1 h2 k1 k2 
+
+sbatch --array=0-$idx --job-name=${filename} trainSLURM

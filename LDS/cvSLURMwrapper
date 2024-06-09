@@ -1,0 +1,25 @@
+#!/bin/bash
+# run this file using bash cvSLURMwrapper
+
+filename=arABcx3D
+
+h1=1 ; h2=30
+k1=1 ; k2=36
+
+echo "fitting model ${filename}..."
+
+idx=-1
+for h in $(seq $h1 $h2); do 
+	for k in $(seq $k1 $k2); do
+		let idx++	
+		echo "xdim=${h}, cv=${k}" 
+	done
+done
+
+asz=$(($idx+1))
+
+echo "job array size = ${asz}"
+
+export filename h1 h2 k1 k2 
+
+sbatch --array=0-$idx --job-name=${filename} cvSLURM
