@@ -1,0 +1,4 @@
+Processed data to fit the LDS and TFR models
+- Monkey A (ar), form the Mante et al. dataset
+- Monkey F (fe), from the Mante et al. dataset
+- RNN trained on the Mante et al. task
