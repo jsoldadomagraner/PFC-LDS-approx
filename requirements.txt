@@ -1,11 +1,16 @@
-Python 3.7.4
-autograd 1.3
+
+Python version:
+Python==3.7.4
+
+Requirements:
+autograd==1.3
+scipy==1.3.1
 
 Note that we modified the function adam in the script optimizers.py within autograd to be able to zero-out the gradients of parameters we did not want to learn. We provide the modified autograd function in the folder utils.
 
 The packages used to fit the models are currently outdated, e.g. autograd is now integrated within PyTorch. However, the scripts should be easily adaptable to run in modern platforms, such as Jax.
 
-For completeness, I list all the python packages installed in the system I used to fit the models, using pip freeze
+The requirements list above were generated using pipreqs. For completeness, below you can find a list of all the python packages installed in the system used to fit the models, generated using pip freeze:
 
 alabaster==0.7.12
 anaconda-client==1.7.2
