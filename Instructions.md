@@ -1,7 +1,7 @@
-The models can be fitted locally or using the cluster scheduler SLURM \
+The models can be fitted locally or using the cluster scheduler SLURM\
 
-To fit the models locally, run for example in the command line \
-python trainlds.py 2 1 \
+To fit the models locally, run for example in the command line\
+python trainlds.py 2 1\
 This fits a model of latent dimensionality 2 and will save the fitted output with the label 1 (run 1), so that you can save multiple fitted model instances with random initializations.\
 python cvlds.py 2 1\
 This fits a model of latent dimensionality 2 with the data condition 1 left out. This script also generates model predictions for the left-out condition.\
