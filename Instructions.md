@@ -12,3 +12,5 @@ bash trainSLURMwrapper\
 bash cvSLURMwrapper\
 This will send parallel jobs to the SLURM scheduler to fit multiple models, e.g. with different latent dimensionalies, multiple runs (random inits), and different left-out conditions for cross-validation.\
 Specify those numbers within the SLURM files. Note that screen outputs and errors are saved, to facilitate debuging. Add your path to save such files at the beginning of the scripts trainSLURM and cvSLURM.
+
+The fiting results are saved in '/yourhomepath/fitted_models/', to change the paths edit mypaths.py and pathstfr.py
