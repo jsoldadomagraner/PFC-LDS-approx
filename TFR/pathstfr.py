@@ -13,7 +13,7 @@ def mypaths():
     
     homepath  = str(Path.home())
 
-    modelpath = homepath + '/fitted_models/'
-    datapath  = homepath + '/data/'
+    modelpath = homepath + '/projects/Mante/fitted_models/'
+    datapath  = homepath + '/projects/Mante/data/'
     
     return modelpath,datapath
